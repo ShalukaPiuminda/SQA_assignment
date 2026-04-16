@@ -1,0 +1,27 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node.js dependencies
+**/node_modules/
+
+# Playwright generated artifacts
+playwright_project/playwright-report/
+playwright_project/test-results/
+playwright_project/screenshots/automation/
+
+# Root-level generated test output
+test-results/
