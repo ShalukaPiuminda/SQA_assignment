@@ -1,0 +1,432 @@
+{
+  "testSuite": {
+    "name": "PixelsSuite Test Suite",
+    "version": "1.0.0",
+    "framework": "Playwright Test",
+    "totalFeatures": 7,
+    "totalTestFiles": 18,
+    "totalTestCases": 48,
+    "features": [
+      {
+        "id": "editor",
+        "name": "PDF Editor",
+        "description": "PDF Editor functionality including load, controls, upload, toolbar, stability, and responsive design",
+        "path": "tests/features/editor",
+        "testFiles": 6,
+        "testCases": 12,
+        "sampleFiles": [
+          "JUnit.pdf"
+        ],
+        "commands": {
+          "run": "npx playwright test tests/features/editor --reporter=list",
+          "report": "npx playwright test tests/features/editor --reporter=html=playwright-report-editor",
+          "debug": "npx playwright test tests/features/editor --debug"
+        }
+      },
+      {
+        "id": "compress",
+        "name": "Compress",
+        "description": "Image compression tools: Compress Image, GIF Compressor, PNG Compressor",
+        "path": "tests/features/compress",
+        "testFiles": 3,
+        "testCases": 6,
+        "sampleFiles": [
+          "sample.gif",
+          "tiny.png"
+        ],
+        "tools": [
+          {
+            "name": "Compress Image",
+            "route": "/compress-image",
+            "features": [
+              "quality slider",
+              "format selection",
+              "download"
+            ]
+          },
+          {
+            "name": "GIF Compressor",
+            "route": "/gif-compressor",
+            "features": [
+              "optimization levels",
+              "color reduction",
+              "lossy compression"
+            ]
+          },
+          {
+            "name": "PNG Compressor",
+            "route": "/png-compressor",
+            "features": [
+              "lossless compression",
+              "PNG re-encoding"
+            ]
+          }
+        ],
+        "commands": {
+          "run": "npx playwright test tests/features/compress --reporter=list",
+          "report": "npx playwright test tests/features/compress --reporter=html=playwright-report-compress",
+          "debug": "npx playwright test tests/features/compress --debug"
+        }
+      },
+      {
+        "id": "crop",
+        "name": "Crop",
+        "description": "Image cropping with format selection (JPG, PNG, WebP)",
+        "path": "tests/features/crop",
+        "testFiles": 1,
+        "testCases": 4,
+        "sampleFiles": [
+          "car.webp"
+        ],
+        "tools": [
+          {
+            "name": "Crop to JPG",
+            "route": "/crop-jpg",
+            "features": [
+              "crop controls",
+              "dimension display",
+              "clear",
+              "download"
+            ]
+          },
+          {
+            "name": "Crop to PNG",
+            "route": "/crop-png",
+            "features": [
+              "crop controls",
+              "dimension display",
+              "clear",
+              "download"
+            ]
+          },
+          {
+            "name": "Crop to WebP",
+            "route": "/crop-webp",
+            "features": [
+              "crop controls",
+              "dimension display",
+              "clear",
+              "download"
+            ]
+          }
+        ],
+        "commands": {
+          "run": "npx playwright test tests/features/crop --reporter=list",
+          "report": "npx playwright test tests/features/crop --reporter=html=playwright-report-crop",
+          "debug": "npx playwright test tests/features/crop --debug"
+        }
+      },
+      {
+        "id": "document-converter",
+        "name": "Document Converter",
+        "description": "Document format conversion: Image to PDF, PDF to Word, Word to PDF",
+        "path": "tests/features/document-converter",
+        "testFiles": 3,
+        "testCases": 6,
+        "sampleFiles": [
+          "JUnit.pdf",
+          "sample.docx"
+        ],
+        "tools": [
+          {
+            "name": "Image to PDF",
+            "route": "/image-to-pdf",
+            "features": [
+              "image upload",
+              "PDF generation",
+              "download"
+            ]
+          },
+          {
+            "name": "PDF to Word",
+            "route": "/pdf-to-word",
+            "features": [
+              "PDF upload",
+              "Word conversion",
+              "download"
+            ]
+          },
+          {
+            "name": "Word to PDF",
+            "route": "/word-to-pdf",
+            "features": [
+              "Word upload",
+              "PDF conversion",
+              "download"
+            ]
+          }
+        ],
+        "commands": {
+          "run": "npx playwright test tests/features/document-converter --reporter=list",
+          "report": "npx playwright test tests/features/document-converter --reporter=html=playwright-report-document-converter",
+          "debug": "npx playwright test tests/features/document-converter --debug"
+        }
+      },
+      {
+        "id": "resize",
+        "name": "Resize",
+        "description": "Image resizing tools: Single Resize, Bulk Resize, AI Image Enlarger",
+        "path": "tests/features/resize",
+        "testFiles": 3,
+        "testCases": 6,
+        "sampleFiles": [
+          "tiny.png",
+          "tiny-2.png"
+        ],
+        "tools": [
+          {
+            "name": "Resize Image",
+            "route": "/resize-image",
+            "features": [
+              "width/height input",
+              "maintain ratio",
+              "download"
+            ]
+          },
+          {
+            "name": "Bulk Resize",
+            "route": "/bulk-resize",
+            "features": [
+              "multiple files",
+              "batch processing",
+              "download all"
+            ]
+          },
+          {
+            "name": "Image Enlarger",
+            "route": "/image-enlarger",
+            "features": [
+              "AI upscaling",
+              "enlargement factor",
+              "quality settings"
+            ]
+          }
+        ],
+        "commands": {
+          "run": "npx playwright test tests/features/resize --reporter=list",
+          "report": "npx playwright test tests/features/resize --reporter=html=playwright-report-resize",
+          "debug": "npx playwright test tests/features/resize --debug"
+        }
+      },
+      {
+        "id": "image-converter",
+        "name": "Image Converter",
+        "description": "Image format conversion: Convert to JPG, PNG, WebP",
+        "path": "tests/features/image-converter",
+        "testFiles": 1,
+        "testCases": 4,
+        "sampleFiles": [
+          "car.jpg"
+        ],
+        "tools": [
+          {
+            "name": "Convert to JPG",
+            "route": "/convert-to-jpg",
+            "features": [
+              "format conversion",
+              "quality settings",
+              "download"
+            ]
+          },
+          {
+            "name": "Convert to PNG",
+            "route": "/convert-to-png",
+            "features": [
+              "format conversion",
+              "transparency",
+              "download"
+            ]
+          },
+          {
+            "name": "Convert to WebP",
+            "route": "/convert-to-webp",
+            "features": [
+              "format conversion",
+              "modern format",
+              "download"
+            ]
+          }
+        ],
+        "commands": {
+          "run": "npx playwright test tests/features/image-converter --reporter=list",
+          "report": "npx playwright test tests/features/image-converter --reporter=html=playwright-report-image-converter",
+          "debug": "npx playwright test tests/features/image-converter --debug"
+        }
+      },
+      {
+        "id": "more",
+        "name": "More Tools",
+        "description": "Additional tools: Rotate, Flip, Meme Generator, Color Picker, Image to Text OCR",
+        "path": "tests/features/more",
+        "testFiles": 1,
+        "testCases": 6,
+        "sampleFiles": [
+          "car.jpg"
+        ],
+        "tools": [
+          {
+            "name": "Rotate Image",
+            "route": "/rotate-image",
+            "features": [
+              "angle slider",
+              "90° buttons",
+              "flip options",
+              "download"
+            ]
+          },
+          {
+            "name": "Flip Image",
+            "route": "/flip-image",
+            "features": [
+              "horizontal flip",
+              "vertical flip",
+              "download PNG"
+            ]
+          },
+          {
+            "name": "Meme Generator",
+            "route": "/meme-generator",
+            "features": [
+              "text input",
+              "font size",
+              "colors",
+              "format selection"
+            ]
+          },
+          {
+            "name": "Color Picker",
+            "route": "/color-picker",
+            "features": [
+              "color extraction",
+              "hex display",
+              "RGB/HSV/CMYK formats"
+            ]
+          },
+          {
+            "name": "Image to Text",
+            "route": "/image-to-text",
+            "features": [
+              "OCR processing",
+              "language selection",
+              "text copy"
+            ]
+          }
+        ],
+        "commands": {
+          "run": "npx playwright test tests/features/more --reporter=list",
+          "report": "npx playwright test tests/features/more --reporter=html=playwright-report-more",
+          "debug": "npx playwright test tests/features/more --debug"
+        }
+      }
+    ],
+    "globalCommands": {
+      "runAll": "npx playwright test tests/features --reporter=list",
+      "reportAll": "npx playwright test tests/features --reporter=html",
+      "runAllChromium": "npx playwright test tests/features --project=chromium --reporter=list",
+      "runAllHeaded": "npx playwright test tests/features --headed --reporter=list",
+      "debugFirst": "npx playwright test tests/features --debug",
+      "jsonReport": "npx playwright test tests/features --reporter=json > test-results.json",
+      "junitReport": "npx playwright test tests/features --reporter=junit --reporter-junit-output-file=junit-report.xml",
+      "updateSnapshots": "npx playwright test tests/features --update-snapshots"
+    },
+    "reporters": {
+      "list": {
+        "format": "console",
+        "description": "Print test results to console (default)"
+      },
+      "html": {
+        "format": "HTML report",
+        "location": "playwright-report/index.html",
+        "description": "Visual HTML report that opens in browser"
+      },
+      "json": {
+        "format": "JSON",
+        "location": "test-results.json",
+        "description": "Machine-readable JSON format for CI/CD"
+      },
+      "junit": {
+        "format": "JUnit XML",
+        "location": "junit-report.xml",
+        "description": "XML format for CI/CD integration"
+      }
+    },
+    "sampleFiles": {
+      "JUnit.pdf": {
+        "path": "sample_files/JUnit.pdf",
+        "type": "PDF",
+        "usedIn": [
+          "editor",
+          "document-converter"
+        ],
+        "size": "small"
+      },
+      "sample.docx": {
+        "path": "sample_files/sample.docx",
+        "type": "Word Document",
+        "usedIn": [
+          "document-converter"
+        ],
+        "size": "small"
+      },
+      "sample.gif": {
+        "path": "sample_files/sample.gif",
+        "type": "GIF Image",
+        "usedIn": [
+          "compress"
+        ],
+        "size": "small"
+      },
+      "tiny.png": {
+        "path": "sample_files/tiny.png",
+        "type": "PNG Image",
+        "usedIn": [
+          "compress",
+          "resize"
+        ],
+        "size": "small"
+      },
+      "tiny-2.png": {
+        "path": "sample_files/tiny-2.png",
+        "type": "PNG Image",
+        "usedIn": [
+          "resize"
+        ],
+        "size": "small"
+      },
+      "car.webp": {
+        "path": "sample_files/car.webp",
+        "type": "WebP Image",
+        "usedIn": [
+          "crop"
+        ],
+        "size": "small"
+      },
+      "car.jpg": {
+        "path": "sample_files/car.jpg",
+        "type": "JPEG Image",
+        "usedIn": [
+          "image-converter",
+          "more"
+        ],
+        "size": "small"
+      }
+    },
+    "cicdIntegration": {
+      "github": {
+        "action": "Run Playwright Tests",
+        "command": "npx playwright test tests/features --reporter=junit --reporter-junit-output-file=junit-report.xml",
+        "reportFormat": "junit"
+      },
+      "jenkins": {
+        "stage": "Test",
+        "command": "npm install && npx playwright test tests/features --reporter=junit --reporter-junit-output-file=junit-report.xml",
+        "reportFormat": "junit"
+      },
+      "azure": {
+        "displayName": "Run Playwright Tests",
+        "command": "npx playwright test tests/features --reporter=junit --reporter-junit-output-file=junit-report.xml",
+        "reportFormat": "junit"
+      }
+    }
+  }
+}

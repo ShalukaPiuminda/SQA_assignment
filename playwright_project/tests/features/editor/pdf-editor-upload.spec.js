@@ -8,7 +8,14 @@ test.describe("PDF Editor - Upload", () => {
 
   test("should allow selecting a PDF file", async ({ page }) => {
     const fileInput = page.locator('input[type="file"]');
-    const filePath = path.join(__dirname, "..", "sample_files", "JUnit.pdf");
+    const filePath = path.join(
+      __dirname,
+      "..",
+      "..",
+      "..",
+      "sample_files",
+      "JUnit.pdf",
+    );
 
     await fileInput.setInputFiles(filePath);
     await expect(fileInput).toHaveValue(/junit\.pdf/i);

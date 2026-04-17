@@ -25,7 +25,14 @@ test.describe("PDF Editor - Toolbar Visibility", () => {
     page,
   }) => {
     const fileInput = page.locator('input[type="file"]');
-    const filePath = path.join(__dirname, "..", "sample_files", "JUnit.pdf");
+    const filePath = path.join(
+      __dirname,
+      "..",
+      "..",
+      "..",
+      "sample_files",
+      "JUnit.pdf",
+    );
 
     await fileInput.setInputFiles(filePath);
 

@@ -14,7 +14,14 @@ test.describe("PDF Editor - Stability", () => {
     await page.goto("https://www.pixelssuite.com/pdf-editor");
 
     const fileInput = page.locator('input[type="file"]');
-    const pdfPath = path.join(__dirname, "..", "sample_files", "JUnit.pdf");
+    const pdfPath = path.join(
+      __dirname,
+      "..",
+      "..",
+      "..",
+      "sample_files",
+      "JUnit.pdf",
+    );
     const prevBtn = page.getByRole("button", { name: /prev/i });
     const nextBtn = page.getByRole("button", { name: /next/i });
     const downloadBtn = page.getByRole("button", { name: /download/i });
