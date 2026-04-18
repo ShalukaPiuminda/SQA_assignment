@@ -23,5 +23,9 @@ playwright_project/playwright-report/
 playwright_project/test-results/
 playwright_project/screenshots/automation/
 
+# Selenium project (exclude entirely)
+selenium_project/
+
 # Root-level generated test output
 test-results/
+GIT-COMMIT-SUMMARY.md

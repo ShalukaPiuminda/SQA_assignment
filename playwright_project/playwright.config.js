@@ -6,7 +6,8 @@ module.exports = defineConfig({
   retries: 0,
   use: {
     headless: true,
-    screenshot: "only-on-failure",
+    screenshot: "on",
+    screenshotDir: "./screenshots/automation",
     video: "retain-on-failure",
     trace: "on-first-retry",
   },
