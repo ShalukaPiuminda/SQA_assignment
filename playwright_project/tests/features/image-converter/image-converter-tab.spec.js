@@ -22,13 +22,17 @@ const converterTools = [
   },
 ];
 
+const validConverterTools = converterTools.filter(
+  (tool) => tool?.key && tool?.label && tool?.url,
+);
+
 test.describe("Image Converter Tab", () => {
   test("should open each image converter route from top navigation", async ({
     page,
   }) => {
     await page.goto("https://www.pixelssuite.com/");
 
-    for (const tool of converterTools) {
+    for (const tool of validConverterTools) {
       await page
         .getByRole("button", { name: /^Image Converter/i })
         .first()
@@ -47,7 +51,7 @@ test.describe("Image Converter Tab", () => {
     }
   });
 
-  for (const tool of converterTools) {
+  for (const tool of validConverterTools) {
     test(`should load ${tool.key} tool and convert after upload`, async ({
       page,
     }) => {

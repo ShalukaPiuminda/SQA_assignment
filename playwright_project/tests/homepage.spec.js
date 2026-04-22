@@ -24,4 +24,12 @@ test.describe("Homepage", () => {
   test("should display visible main sections", async ({ page }) => {
     await expect(page.locator("body")).toContainText(/home|pdf|image|tool/i);
   });
+
+  test("should display footer with useful links or text", async ({ page }) => {
+    const footer = page.locator("footer").first();
+
+    await expect(footer).toBeVisible();
+    await expect(footer).not.toBeEmpty();
+    await expect(footer).toContainText(/privacy|terms|contact|copyright/i);
+  });
 });
